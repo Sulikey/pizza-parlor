@@ -1,8 +1,8 @@
-# _Mr.Robogers-Neighborhood_
+# _Pizza Parlor_
 
 #### By _**Anahi Ruiz Robles**_
 
-#### _Love funny robots well this webpage will beep boop once you enter a couple digits!_
+#### _Project for pizza parlor_
 
 ## Technologies Used
 
@@ -12,7 +12,7 @@
 
 ## Description
 
-_This webpage contains a silly robot that will beep boop once you enter any number._
+_This webpage contains project for pizza parlor._
 
 ## Setup/Installation Requirements
 
