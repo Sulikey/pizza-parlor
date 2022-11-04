@@ -24,13 +24,20 @@ Order.prototype.locatePizza = function(name) {
 
 
 Pizza.prototype.price = function() {
-  if (this.size === 'large' && this.toppings.includes('salami') || this.size === 'large' && this.toppings.includes('beef') || this.size === 'large' && this.toppings.includes('mushrooms')) {
+  if (this.size === 'large' && this.toppings.includes
+  ('salami') || this.size === 'large' && this.toppings.includes
+  ('beef') || this.size === 'large' && this.toppings.includes
+  ('mushrooms')) {
     let price = '$40';
     return price;
-  } else if (this.size === 'medium' && this.toppings.includes('salami') || this.size === 'medium' && this.toppings.includes('beef') || this.size === 'medium'&& this.toppings.includes('mushrooms')) {
+  } else if (this.size === 'medium' && this.toppings.includes
+  ('salami') || this.size === 'medium' && this.toppings.includes
+  ('beef') || this.size === 'medium'&& this.toppings.includes
+  ('mushrooms')) {
     let price = '$35';
     return price;
-  } else if (this.size === 'small' && this.toppings.includes('salami') || this.toppings.includes('salami') || this.toppings.includes('beef') || this.toppings.includes('mushrooms')) {
+  } else if (this.size === 'small' && this.toppings.includes('salami') || this.toppings.includes('beef') || this.toppings.includes
+  ('mushrooms')) {
     let price = '$30';
     return price;
   } else if (this.size === 'large') {
