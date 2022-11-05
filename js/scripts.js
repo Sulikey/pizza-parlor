@@ -64,7 +64,7 @@ function displayOrder(event) {
 
 function handleSubmission(event) {
   event.preventDefault(); 
-  const customerNameInput = document.getElementById('customer-name-input').value;
+  const customerNameInput = document.getElementById('customer-name').value;
   const sizeInput = document.querySelector("select#size-select").value;
   const toppingsInputArray = []
   const toppingsInput = document.querySelectorAll('input[type=checkbox]:checked') for (let i = 0; i < toppingsInput.lenght; i++){
@@ -72,7 +72,7 @@ function handleSubmission(event) {
   }
   let newPizza = new Pizza(customerNameInput, sizeInput, toppingsInputArray);
   let amount = newPizza.amount();
-  order.addPizza(newPizza);document.querySelector('total-price').innerText = price + (' ');
+  order.addPizza(newPizza);document.querySelector('total-price').innerText = amount + (' ');
 }
 
 
