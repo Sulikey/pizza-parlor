@@ -3,14 +3,6 @@ function Order() {
 } 
 //{} is shorthand for creating an empty object.//
 
-function Pizza (customerName, size, toppings = [], price) {
-  this.customerName = customerName;
-  this.size = size;
-  this.toppings = toppings;
-  this.pizzaAmount = price;
-} 
-//[] is shorthand for creating an empty array.//
-
 Order.prototype.addPizza = function(pizza) {
   this.pizzas[pizza.customerName] = pizza;
 }
@@ -23,42 +15,49 @@ Order.prototype.findPizza = function(customerName) {
 } 
 //!== checks whether its two operands are not equal//
 
-
-Pizza.prototype.amount = function() {
-  if (this.size === 'large' && this.toppings.includes
-  ('salami') || this.size === 'large' && this.toppings.includes
-  ('beef') || this.size === 'large' && this.toppings.includes
-  ('mushrooms')) {
+Pizza.prototype.addToppings = function() {
+  PizzaAmount ()
+  if (this.toppings.includes(' salami')) {
+    let amount = '$42';
+    return amount;
+  } else if (this.toppings.includes(' beef')) {
+    let amount = '$41';
+    return amount;
+  } else if (this.toppings.includes(' mushrooms')) {
     let amount = '$40';
     return amount;
-  } else if (this.size === 'medium' && this.toppings.includes
-  ('salami') || this.size === 'medium' && this.toppings.includes
-  ('beef') || this.size === 'medium'&& this.toppings.includes
-  ('mushrooms')) {
-    let amount = '$35';
+  }
+}
+
+Pizza.prototype.amount = function() {
+  if (this.size === "large") {
+    let amount = '$32';
     return amount;
-  } else if (this.size === 'small' && this.toppings.includes('salami') || this.toppings.includes('beef') || this.toppings.includes
-  ('mushrooms')) {
-    let amount = '$30';
-    return amount;
-  } else if (this.size === 'large') {
-    let amount = '$35';
-    return amount;
-  } else if(this.size === 'medium') {
-    let amount = '$30';
+  } else if(this.size === "medium") {
+    let amount = '$28';
     return amount;
   } else if (this.size === "small") {
     let amount = '$25';
     return amount;
   } 
 }
+
+//[] is shorthand for creating an empty array.//
+function Pizza (customerName, size, toppings = [], price) {
+  this.customerName = customerName;
+  this.size = size;
+  this.toppings = toppings;
+  this.pizzaAmount = price;
+} 
+
 // UI 
 let order = new Order
 
 function displayOrder() {
-  const customerName = document.getElementById("customer-name-input");
+  const customerName = document.getElementById("customer-name-input").value;
   const displayOrder = order.findPizza(customerName); 
-  document.querySelector(".customer-name").innerText = displayOrder.customerName + (" "); document.querySelector(".pizza-size").innerText = displayOrder.size  + (" "); 
+  document.querySelector(".customer-name").innerText = displayOrder.customerName + (" "); 
+  document.querySelector(".pizza-size").innerText = displayOrder.size  + (" "); 
   document.querySelector(".pizza-toppings").innerText = displayOrder.toppings + (" ");
 }
 
@@ -67,8 +66,8 @@ function handleSubmission(event) {
   const customerNameInput = document.getElementById("customer-name-input").value;
   const sizeInput = document.querySelector("select#size-select").value;
   const toppingsInputArray = []
-  const toppingsInput = document.querySelectorAll('input[type=checkbox]:checked') 
-  for (let i = 0; i < toppingsInput.lenght; i++) {
+  const toppingsInput = document.querySelectorAll("input[name=topping]:checked"); 
+  for (let i = 0; i < toppingsInput.length; i++) {
     toppingsInputArray.push(toppingsInput[i].value)
   }
   let newPizza = new Pizza(customerNameInput, sizeInput, toppingsInputArray);

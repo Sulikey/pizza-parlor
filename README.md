@@ -2,7 +2,7 @@
 
 #### By _**Anahi Ruiz Robles**_
 
-#### _Project for pizza parlor_
+#### _Project for pizza parlor choose your own toppings and size._
 
 ## Technologies Used
 
@@ -12,7 +12,7 @@
 
 ## Description
 
-_This webpage contains project for pizza parlor._
+_This webpage contains project for pizza parlor, a website for a pizza company where a user can choose one or more individual toppings, a size to order a pizza, and see the final cost._
 
 ## Setup/Installation Requirements
 
@@ -37,5 +37,8 @@ Code:
  function Order() { this.pizzas = {}}
 Expected Output: this.pizzas is now empty object
 
-
+Describe: Order()
+Test: Should create an new blank order
+Code:let order = new Order();
+Expected Output:order {}
 ```

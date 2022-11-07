@@ -1,0 +1,14 @@
+body {
+  background-color: rgb(79, 93, 130);
+}
+.kimpizza  {
+  width:300px;
+  height: auto;
+  float: center;
+  padding: 1%;
+  
+}
+
+.kimpizza img{
+    width: 300px;
+  }
