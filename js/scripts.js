@@ -16,29 +16,27 @@ Order.prototype.findPizza = function(customerName) {
 //!== checks whether its two operands are not equal//
 
 Pizza.prototype.addToppings = function() {
-  PizzaAmount ()
+
   if (this.toppings.includes(' salami')) {
-    let amount = '$42';
-    return amount;
+    this.pizzaAmount = '$42';
+
   } else if (this.toppings.includes(' beef')) {
-    let amount = '$41';
-    return amount;
+    this.pizzaAmount = '$41';
+
   } else if (this.toppings.includes(' mushrooms')) {
-    let amount = '$40';
-    return amount;
+    this.pizzaAmount = '$40';
+
   }
 }
 
 Pizza.prototype.amount = function() {
   if (this.size === "large") {
-    let amount = '$32';
-    return amount;
+    this.pizzaAmount = '$32';
   } else if(this.size === "medium") {
-    let amount = '$28';
-    return amount;
+    this.pizzaAmount = '$28';
+
   } else if (this.size === "small") {
-    let amount = '$25';
-    return amount;
+    this.pizzaAmount = '$25';
   } 
 }
 
@@ -71,9 +69,12 @@ function handleSubmission(event) {
     toppingsInputArray.push(toppingsInput[i].value)
   }
   let newPizza = new Pizza(customerNameInput, sizeInput, toppingsInputArray);
-  let amount = newPizza.amount();
+
+  newPizza.amount();
+  newPizza.addToppings();
+  console.log(newPizza)
   order.addPizza(newPizza); 
-  document.querySelector(".total-price").innerText = amount + (" ");
+  document.querySelector(".total-price").innerText = newPizza.pizzaAmount + (" ");
 }
 
 
